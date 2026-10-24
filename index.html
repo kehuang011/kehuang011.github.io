@@ -2,61 +2,1194 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-  <title>My Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ke Huang, Ph.D. | Assistant Professor of Mathematics &amp; Statistics</title>
+  <meta name="description" content="Academic homepage of Dr. Ke Huang, Assistant Professor in the Department of Mathematics and Statistics at UMass Lowell. Research in statistical and AI methodologies for neuroscience and biomedical data, women's brain health, and statistical learning theory of neural networks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --bg-primary: #fbfcfe;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --bg-accent-soft: #eff6ff;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --brand-primary: #00539f;
+      --brand-dark: #0c2340;
+      --brand-accent: #1d4ed8;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08);
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --max-width: 1020px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: #f5f7fb;
-      color: #222;
-      text-align: center;
+      padding: 0;
     }
-    header {
-      background: #182b4d;
-      color: white;
-      padding: 70px 20px;
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px;
     }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Source Serif 4', Georgia, Cambria, "Times New Roman", serif;
+    }
+
+    a {
+      color: var(--brand-primary);
+      text-decoration: none;
+      transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--brand-accent);
+      text-decoration: underline;
+    }
+
+    /* Top Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 252, 254, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--brand-dark);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-brand:hover {
+      text-decoration: none;
+    }
+
+    .nav-brand span {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-left: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-primary);
+    }
+
+    .nav-cv-btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      background-color: var(--brand-primary);
+      color: #ffffff !important;
+      font-weight: 500;
+      font-size: 0.88rem;
+    }
+
+    .nav-cv-btn:hover {
+      background-color: var(--brand-dark);
+      text-decoration: none;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 56px 0 44px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 290px;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .hero-title {
+      font-size: 2.65rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .hero-role {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--brand-primary);
+      margin-bottom: 4px;
+    }
+
+    .hero-affiliation {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .hero-bio {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin: 8px 0 18px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+    }
+
+    .hero-list li {
+      padding-left: 4px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none !important;
+    }
+
+    .btn-primary {
+      background-color: var(--brand-primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-dark);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+      border-color: var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      background-color: var(--bg-accent-soft);
+    }
+
+    .btn svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    /* Info Sidebar Card in Hero */
+    .profile-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .profile-photo-wrapper {
+      width: 100%;
+      aspect-ratio: 4 / 4.6;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .contact-item svg {
+      width: 17px;
+      height: 17px;
+      color: var(--brand-primary);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Section Styling */
     section {
-      padding: 35px 20px;
-      max-width: 700px;
-      margin: auto;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border-color);
     }
-    a { color: #2367b1; }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      position: relative;
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* Research Interests Cards */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .research-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .research-card h3 {
+      font-size: 1.22rem;
+      color: var(--brand-dark);
+      margin-bottom: 10px;
+    }
+
+    .research-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background-color: var(--bg-subtle);
+      color: var(--text-secondary);
+    }
+
+    /* Prospective Students Banner */
+    .students-card {
+      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+      border: 1px solid #bfdbfe;
+      border-left: 4px solid var(--brand-primary);
+      border-radius: var(--radius-md);
+      padding: 28px 30px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .students-card p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+
+    .students-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .students-req-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0;
+      list-style: none;
+    }
+
+    .students-req-list li {
+      background: var(--bg-surface);
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--brand-dark);
+    }
+
+    /* Publications */
+    .pub-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--brand-primary);
+      border-color: var(--brand-primary);
+      color: #ffffff;
+    }
+
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .pub-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .pub-item:hover {
+      border-color: #cbd5e1;
+    }
+
+    .pub-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .pub-year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--brand-primary);
+      background: var(--bg-accent-soft);
+      padding: 2px 9px;
+      border-radius: 6px;
+    }
+
+    .pub-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge-nature {
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+      padding: 2px 10px;
+      border-radius: 6px;
+      text-decoration: none !important;
+    }
+
+    .badge-nature:hover {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .badge-topic {
+      font-size: 0.76rem;
+      font-weight: 500;
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      padding: 2px 9px;
+      border-radius: 6px;
+    }
+
+    .pub-title {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .pub-authors {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .pub-authors strong {
+      color: var(--text-primary);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .pub-venue {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .pub-venue em {
+      font-style: normal;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    /* Timeline / Experience & Education */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 20px;
+      border-left: 2px solid var(--border-color);
+    }
+
+    .timeline-item.current {
+      border-left-color: var(--brand-primary);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      font-size: 1.02rem;
+      color: var(--text-primary);
+    }
+
+    .timeline-date {
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .timeline-org {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--brand-primary);
+      margin-bottom: 2px;
+    }
+
+    .timeline-details {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* Presentations Card */
+    .info-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .compact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 0.95rem;
+    }
+
+    .compact-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      color: var(--text-secondary);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--bg-subtle);
+    }
+
+    .compact-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .compact-code {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .compact-term {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
     footer {
-      padding: 25px;
-      color: #666;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border-color);
+      padding: 36px 0;
+      margin-top: 24px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 820px) {
+      .hero-grid,
+      .research-grid,
+      .two-col-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        max-width: 340px;
+      }
+
+      .nav-brand span {
+        display: none;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero-title {
+        font-size: 2.15rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-links li:not(:last-child):not(:first-child) {
+        display: none;
+      }
+
+      .compact-list li {
+        flex-direction: column;
+        gap: 2px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Hi, I'm Your Name!</h1>
-    <p>Student | Developer | Creator</p >
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">Ke Huang <span>Ph.D.</span></a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#research">Research</a></li>
+          <li><a href="#students">Prospective Students</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#experience">Experience &amp; Education</a></li>
+          <li><a href="#presentations">Presentations</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Welcome to my personal website!
-       I'm passionate about technology
-       and building exciting projects.</p >
-  </section>
+  <main class="container">
+    <!-- Hero / About Section -->
+    <section class="hero" id="about">
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-title">Ke Huang, Ph.D.</h1>
+          <p class="hero-role">Assistant Professor of Mathematics and Statistics</p>
+          <p class="hero-affiliation">University of Massachusetts Lowell</p>
 
-  <section>
-    <h2>My Projects</h2>
-    <p>Project 1 - Description</p >
-    <p>Project 2 - Description</p >
-  </section>
+          <p class="hero-bio">
+            I am an Assistant Professor in the Department of Mathematics and Statistics at the <strong>University of Massachusetts Lowell</strong>. Previously, I was a Research Associate in the Department of Radiology at <strong>Weill Cornell Medicine &amp; Cornell University</strong> working with <a href="https://www.cocolaboratory.com/" target="_blank" rel="noopener">Dr. Amy Kuceyeski (CoCo Lab)</a>. I earned my Ph.D. in Applied Statistics from the <strong>University of California, Riverside</strong> in 2024 under the supervision of <a href="https://sites.google.com/view/shujiema?pli=1&authuser=0" target="_blank" rel="noopener">Dr. Shujie Ma</a>.
+          </p>
+          <p class="hero-bio">
+            My research focuses on:
+          </p>
+          <ul class="hero-list">
+            <li>(1) <strong>Statistical &amp; AI methodologies for neuroscience and biomedical data</strong>—including human brain connectomes, women's brain health, EEG, and ECG signal analysis.</li>
+            <li>(2) <strong>Statistical learning theory for deep neural networks</strong>.</li>
+          </ul>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: hello@example.com</p >
-    <a href=" ">
-      My GitHub
-    </a >
-  </section>
+          <div class="hero-actions">
+            <a href="https://scholar.google.com/citations?user=g1yB1sYAAAAJ&hl=en" class="btn btn-primary" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              Google Scholar
+            </a>
+            <a href="mailto:Ke_Huang@uml.edu" class="btn btn-outline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              Ke_Huang@uml.edu
+            </a>
+          </div>
+        </div>
 
-  <footer>© 2026 Your Name</footer>
+        <aside class="profile-card" aria-label="Profile and Contact Information">
+          <div class="profile-photo-wrapper">
+            <img src="keke.jpg" alt="Ke Huang" class="profile-photo">
+          </div>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <span class="contact-label">Office</span>
+                Southwick Hall 350J<br>
+                UMass Lowell, Lowell, MA 01854
+              </div>
+            </li>
+            <li class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div>
+                <span class="contact-label">Email</span>
+                <a href="mailto:Ke_Huang@uml.edu">Ke_Huang@uml.edu</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <div>
+                <span class="contact-label">Profiles</span>
+                <a href="https://scholar.google.com/citations?user=g1yB1sYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> &middot;
+                <a href="https://github.com/kehuang011" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Research Interests Section -->
+    <section id="research">
+      <div class="section-header">
+        <h2 class="section-title">Research Interests</h2>
+      </div>
+      <div class="research-grid">
+        <div class="research-card">
+          <div>
+            <h3>Statistical &amp; AI Applications in Health</h3>
+            <p>
+              Developing artificial intelligence and statistical models to analyze complex biomedical and health data—such as human brain connectivity (connectomes), Electroencephalogram (EEG), and Electrocardiogram (ECG)—providing insights and methodological advancements.
+            </p>
+          </div>
+          <div class="tag-list">
+            <span class="tag">Brain Connectomes</span>
+            <span class="tag">Women's Brain Health</span>
+            <span class="tag">EEG / ECG Signal Analysis</span>
+            <span class="tag">Biostatistics</span>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <div>
+            <h3>Statistical Learning Theory of Neural Networks</h3>
+            <p>
+              Providing theoretical foundations for deep learning, including approximation theory and statistical estimation theory of neural networks, and exploring methodologies to overcome high-dimensional challenges.
+            </p>
+          </div>
+          <div class="tag-list">
+            <span class="tag">Deep Learning Theory</span>
+            <span class="tag">Sparse Neural Networks</span>
+            <span class="tag">Empirical Risk Minimization</span>
+            <span class="tag">High-Dimensional Statistics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prospective Students Section -->
+    <section id="students">
+      <div class="section-header">
+        <h2 class="section-title">Prospective Students</h2>
+      </div>
+      <div class="students-card">
+        <p>
+          I am actively looking for motivated students to join my research group at <strong>UMass Lowell</strong> who are interested in <strong>neuroscience</strong> and <strong>women's brain health</strong>.
+        </p>
+        <ul class="students-req-list">
+          <li>Neuroscience &amp; Women's Brain Health</li>
+          <li>Statistics / Mathematics / Deep Learning Background</li>
+          <li>Strong Coding Skills (Python / R)</li>
+        </ul>
+        <p>
+          Prospective students with a solid background in statistics, mathematics, or deep learning along with strong programming skills are encouraged to reach out at <a href="mailto:Ke_Huang@uml.edu"><strong>Ke_Huang@uml.edu</strong></a> with your CV, transcripts, and a brief description of your research interests.
+        </p>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Publications &amp; Preprints</h2>
+          <p class="section-subtitle">
+            Full citation metrics available on <a href="https://scholar.google.com/citations?user=g1yB1sYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          </p>
+        </div>
+        <div class="pub-controls" role="tablist" aria-label="Filter publications by topic">
+          <button class="filter-btn active" data-filter="all" type="button">All (8)</button>
+          <button class="filter-btn" data-filter="health" type="button">Neuroscience &amp; Biomedical Data</button>
+          <button class="filter-btn" data-filter="theory" type="button">Learning Theory &amp; Deep Learning</button>
+        </div>
+      </div>
+
+      <div class="pub-list" id="pub-list">
+        <!-- 2026 Brain Networks -->
+        <article class="pub-item" data-category="health">
+          <div class="pub-top">
+            <span class="pub-year">2026</span>
+            <div class="pub-badges">
+              <a href="https://www.nature.com/articles/d41586-026-00349-7" target="_blank" rel="noopener" class="badge-nature">
+                Covered in Nature &#8599;
+              </a>
+              <span class="badge-topic">Brain Connectomes</span>
+            </div>
+          </div>
+          <h3 class="pub-title">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=g1yB1sYAAAAJ&citation_for_view=g1yB1sYAAAAJ:Tyk-4Ss8FVUC" target="_blank" rel="noopener">
+              The progression of sex differences in brain networks across the lifespan
+            </a>
+          </h3>
+          <p class="pub-authors">
+            <strong>Huang, K.</strong>, Jamison, K. W., Miolane, N., Jacobs, E., &amp; Kuceyeski, A.
+          </p>
+          <p class="pub-venue">
+            <em>bioRxiv</em>, 2026.
+          </p>
+        </article>
+
+        <!-- 2026 CNN JMLR -->
+        <article class="pub-item" data-category="theory">
+          <div class="pub-top">
+            <span class="pub-year">2026</span>
+            <div class="pub-badges">
+              <span class="badge-topic">Statistical Learning Theory</span>
+            </div>
+          </div>
+          <h3 class="pub-title">
+            On the Learning Theory of Deep Convolutional Neural Network Estimators Obtained via Empirical Risk Minimization
+          </h3>
+          <p class="pub-authors">
+            <strong>Huang, K.</strong>, &amp; Ma, S.
+          </p>
+          <p class="pub-venue">
+            Under revision at <em>Journal of Machine Learning Research (JMLR)</em>.
+          </p>
+        </article>
+
+        <!-- 2025 Neural Computation -->
+        <article class="pub-item" data-category="theory">
+          <div class="pub-top">
+            <span class="pub-year">2025</span>
+            <div class="pub-badges">
+              <span class="badge-topic">Statistical Learning Theory</span>
+            </div>
+          </div>
+          <h3 class="pub-title">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=g1yB1sYAAAAJ&citation_for_view=g1yB1sYAAAAJ:9yKSN-GCB0IC" target="_blank" rel="noopener">
+              Nearly Optimal Learning Using Sparse Deep ReLU Networks in Regularized Empirical Risk Minimization With Lipschitz Loss
+            </a>
+          </h3>
+          <p class="pub-authors">
+            <strong>Huang, K.</strong>, Liu, M., &amp; Ma, S.
+          </p>
+          <p class="pub-venue">
+            <em>Neural Computation</em>, 37(4), 815&ndash;870.
+          </p>
+        </article>
+
+        <!-- 2025 Neurocomputing -->
+        <article class="pub-item" data-category="theory">
+          <div class="pub-top">
+            <span class="pub-year">2025</span>
+            <div class="pub-badges">
+              <span class="badge-topic">Statistical Learning Theory</span>
+            </div>
+          </div>
+          <h3 class="pub-title">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=g1yB1sYAAAAJ&citation_for_view=g1yB1sYAAAAJ:zYLM7Y9cAGgC" target="_blank" rel="noopener">
+              Generalization and Risk Bounds for Recurrent Neural Networks
+            </a>
+          </h3>
+          <p class="pub-authors">
+            Cheng, X., <strong>Huang, K.</strong>, &amp; Ma, S.
+          </p>
+          <p class="pub-venue">
+            <em>Neurocomputing</em>, 616, 128825.
+          </p>
+        </article>
+
+        <!-- 2024 SleepEGAN -->
+        <article class="pub-item" data-category="health theory">
+          <div class="pub-top">
+            <span class="pub-year">2024</span>
+            <div class="pub-badges">
+              <span class="badge-topic">Deep Learning &amp; Biomedical Signals</span>
+            </div>
+          </div>
+          <h3 class="pub-title">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=g1yB1sYAAAAJ&citation_for_view=g1yB1sYAAAAJ:qjMakFHDy7sC" target="_blank" rel="noopener">
+              SleepEGAN: A GAN-enhanced Ensemble Deep Learning Model for Imbalanced Classification of Sleep Stages
+            </a>
+          </h3>
+          <p class="pub-authors">
+            Cheng, X., <strong>Huang, K.</strong>, Zou, Y., &amp; Ma, S.
+          </p>
+          <p class="pub-venue">
+            <em>Biomedical Signal Processing and Control</em>, 92, 106020.
+          </p>
+        </article>
+
+        <!-- 2023 Heliyon -->
+        <article class="pub-item" data-category="health">
+          <div class="pub-top">
+            <span class="pub-year">2023</span>
+            <div class="pub-badges">
+              <span class="badge-topic">Biostatistics &amp; Public Health</span>
+            </div>
+          </div>
+          <h3 class="pub-title">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=g1yB1sYAAAAJ&citation_for_view=g1yB1sYAAAAJ:d1gkVwhDpl0C" target="_blank" rel="noopener">
+              Associations between Occurrence of Birth Defects and Hydraulic Fracturing Activities in Barnett Shale Region, Texas
+            </a>
+          </h3>
+          <p class="pub-authors">
+            Han, J. W., Zhang, B., Zhang, X., <strong>Huang, K.</strong>, Fang, V., &amp; Xu, X.
+          </p>
+          <p class="pub-venue">
+            <em>Heliyon</em>, 9(4).
+          </p>
+        </article>
+
+        <!-- 2021 Androgens -->
+        <article class="pub-item" data-category="health">
+          <div class="pub-top">
+            <span class="pub-year">2021</span>
+            <div class="pub-badges">
+              <span class="badge-topic">Biostatistics &amp; Clinical Research</span>
+            </div>
+          </div>
+          <h3 class="pub-title">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=g1yB1sYAAAAJ&citation_for_view=g1yB1sYAAAAJ:u-x6o8ySG0sC" target="_blank" rel="noopener">
+              Testosterone Therapy Reduces Cardiovascular Risk Among Hypogonadal Men: A Prospective Cohort Study in Germany
+            </a>
+          </h3>
+          <p class="pub-authors">
+            Zhang, X., <strong>Huang, K.</strong>, Saad, F., Haider, K. S., Haider, A., &amp; Xu, X.
+          </p>
+          <p class="pub-venue">
+            <em>Androgens: Clinical Research and Therapeutics</em>, 2(1), 64&ndash;72.
+          </p>
+        </article>
+
+        <!-- 2019 BMC Public Health -->
+        <article class="pub-item" data-category="health">
+          <div class="pub-top">
+            <span class="pub-year">2019</span>
+            <div class="pub-badges">
+              <span class="badge-topic">Biostatistics &amp; Public Health</span>
+            </div>
+          </div>
+          <h3 class="pub-title">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=g1yB1sYAAAAJ&citation_for_view=g1yB1sYAAAAJ:2osOgNQ5qMEC" target="_blank" rel="noopener">
+              Effects of the Home-based Educational Intervention on Health Outcomes among Primarily Hispanic Children with Asthma: a Quasi-experimental Study
+            </a>
+          </h3>
+          <p class="pub-authors">
+            Baek, J., <strong>Huang, K.</strong>, Conner, L., Tapangan, N., Xu, X., &amp; Carrillo, G.
+          </p>
+          <p class="pub-venue">
+            <em>BMC Public Health</em>, 19(1), 912 (1&ndash;8).
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience">
+      <div class="two-col-grid">
+        <div>
+          <div class="section-header">
+            <h2 class="section-title">Professional Experience</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item current">
+              <div class="timeline-header">
+                <span class="timeline-role">Assistant Professor</span>
+                <span class="timeline-date">Sep 2026 &ndash; Present</span>
+              </div>
+              <div class="timeline-org">University of Massachusetts Lowell</div>
+              <div class="timeline-details">
+                Department of Mathematics and Statistics
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-role">Research Associate</span>
+                <span class="timeline-date">Sep 2024 &ndash; Sep 2026</span>
+              </div>
+              <div class="timeline-org">Weill Cornell Medicine &amp; Cornell University</div>
+              <div class="timeline-details">
+                Department of Radiology &middot; Advisor: <a href="https://www.cocolaboratory.com/" target="_blank" rel="noopener">Dr. Amy Kuceyeski</a>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-role">Research Intern</span>
+                <span class="timeline-date">Jun 2023 &ndash; Aug 2023</span>
+              </div>
+              <div class="timeline-org">Neurocrine Biosciences</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-header">
+            <h2 class="section-title">Education</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item current">
+              <div class="timeline-header">
+                <span class="timeline-role">Ph.D. in Applied Statistics</span>
+                <span class="timeline-date">Sep 2024</span>
+              </div>
+              <div class="timeline-org">University of California, Riverside</div>
+              <div class="timeline-details">
+                Advisor: <a href="https://sites.google.com/view/shujiema?pli=1&authuser=0" target="_blank" rel="noopener">Dr. Shujie Ma</a><br>
+                Thesis: <em>Statistical Learning and Applications in Sparse Neural Networks</em>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-role">M.S. in Statistics</span>
+                <span class="timeline-date">May 2019</span>
+              </div>
+              <div class="timeline-org">Texas A&amp;M University</div>
+              <div class="timeline-details">
+                College Station, TX
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-role">B.S. in Applied Statistics</span>
+                <span class="timeline-date">May 2017</span>
+              </div>
+              <div class="timeline-org">Jiangsu Normal University</div>
+              <div class="timeline-details">
+                Xuzhou, China
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Presentations Section -->
+    <section id="presentations">
+      <div class="section-header">
+        <h2 class="section-title">Presentations</h2>
+      </div>
+      <div class="info-card">
+        <ul class="compact-list">
+          <li>
+            <span>
+              <span class="compact-code">Organization for Human Brain Mapping (OHBM)</span> &mdash; Bordeaux, France
+            </span>
+            <span class="compact-term">Jun 2026</span>
+          </li>
+          <li>
+            <span>
+              <span class="compact-code">Organization for Human Brain Mapping (OHBM)</span> &mdash; Brisbane, Australia
+            </span>
+            <span class="compact-term">Jun 2025</span>
+          </li>
+          <li>
+            <span>
+              <span class="compact-code">The 14th International Conference of the ERCIM WG on Computational and Methodological Statistics</span> &mdash; Online
+            </span>
+            <span class="compact-term">Dec 2021</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        &copy; 2026 Ke Huang. Department of Mathematics and Statistics, UMass Lowell.
+      </div>
+      <div class="footer-links">
+        <a href="mailto:Ke_Huang@uml.edu">Email</a>
+        <a href="https://scholar.google.com/citations?user=g1yB1sYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.pub-item');
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const filter = btn.getAttribute('data-filter');
+
+          buttons.forEach(function (b) {
+            b.classList.remove('active');
+          });
+          btn.classList.add('active');
+
+          items.forEach(function (item) {
+            const categories = (item.getAttribute('data-category') || '').split(' ');
+            if (filter === 'all' || categories.indexOf(filter) !== -1) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
